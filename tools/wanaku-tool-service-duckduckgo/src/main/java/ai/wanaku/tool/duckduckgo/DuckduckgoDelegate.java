@@ -41,7 +41,12 @@ public class DuckduckgoDelegate extends AbstractToolDelegate {
             JsonObject fullResponse = new JsonObject(json);
 
             JsonObject ret = new JsonObject();
-            ret.put("abstract", fullResponse.getString("Abstract"));
+            final String anAbstract = fullResponse.getString("Abstract");
+            if (anAbstract == null || anAbstract.isEmpty()) {
+                return List.of("There were no results for the provided search term");
+            }
+
+            ret.put("abstract", anAbstract);
             ret.put("abstractSource", fullResponse.getString("AbstractSource"));
             ret.put("abstractSource", fullResponse.getString("AbstractURL"));
             ret.put("entity", fullResponse.getString("Entity"));
