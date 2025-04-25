@@ -3,13 +3,14 @@
   <parent>
     <groupId>ai.wanaku.examples</groupId>
     <artifactId>wanaku-examples</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.4</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>tools</artifactId>
   <packaging>pom</packaging>
   <name>Wanaku :: Examples :: Tools</name>
+  <version>0.0.4</version>
 
   <modules>
     <module>wanaku-tool-service-jolokia</module>

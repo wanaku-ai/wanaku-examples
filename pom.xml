@@ -5,13 +5,14 @@
     <parent>
         <groupId>ai.wanaku</groupId>
         <artifactId>parent</artifactId>
-        <version>0.0.4-SNAPSHOT</version>
+        <version>0.0.4</version>
     </parent>
 
     <groupId>ai.wanaku.examples</groupId>
     <packaging>pom</packaging>
     <artifactId>wanaku-examples</artifactId>
     <name>Wanaku :: Examples</name>
+    <version>0.0.4</version>
 
     <modules>
         <module>providers</module>
