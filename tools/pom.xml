@@ -13,5 +13,6 @@
 
   <modules>
     <module>wanaku-tool-service-jolokia</module>
+    <module>wanaku-tool-service-duckduckgo</module>
   </modules>
 </project>
