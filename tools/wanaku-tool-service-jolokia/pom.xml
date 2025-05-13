@@ -48,20 +48,20 @@
         <dependency>
             <groupId>ai.wanaku</groupId>
             <artifactId>core-exchange</artifactId>
-            <version>${project.version}</version>
+            <version>${wanaku.version}</version>
         </dependency>
 
         <dependency>
             <groupId>ai.wanaku</groupId>
             <artifactId>core-services</artifactId>
-            <version>${project.version}</version>
+            <version>${wanaku.version}</version>
         </dependency>
 
 
         <dependency>
             <groupId>ai.wanaku</groupId>
             <artifactId>core-service-discovery</artifactId>
-            <version>${project.version}</version>
+            <version>${wanaku.version}</version>
         </dependency>
 
         <dependency>
