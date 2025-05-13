@@ -15,7 +15,7 @@
     <name>Wanaku :: Examples</name>
 
     <properties>
-        <wanaku.version>0.0.5</wanaku.version>
+        <wanaku.version>0.0.6-SNAPSHOT</wanaku.version>
     </properties>
 
     <modules>
