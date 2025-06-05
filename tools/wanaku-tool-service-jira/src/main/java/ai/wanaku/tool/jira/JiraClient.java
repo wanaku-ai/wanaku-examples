@@ -5,13 +5,13 @@ import jakarta.inject.Inject;
 
 import ai.wanaku.core.exchange.ParsedToolInvokeRequest;
 import ai.wanaku.core.exchange.ToolInvokeRequest;
-import ai.wanaku.core.services.config.WanakuToolConfig;
 import ai.wanaku.core.services.tool.Client;
 
 import java.util.Map;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.component.jira.JiraConstants;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
 
 @ApplicationScoped
@@ -20,8 +20,11 @@ public class JiraClient implements Client {
 
     private final ProducerTemplate producer;
 
-    @Inject
-    WanakuToolConfig config;
+    @ConfigProperty(name = "wanaku.tool.jira.url")
+    String jiraUrl;
+
+    @ConfigProperty(name = "wanaku.tool.jira.access.token")
+    String accessToken;
 
     public JiraClient(CamelContext camelContext) {
         this.producer = camelContext.createProducerTemplate();
@@ -29,11 +32,6 @@ public class JiraClient implements Client {
 
     @Override
     public Object exchange(ToolInvokeRequest request) {
-        Map<String, String> serviceConfigurationsMap = request.getServiceConfigurationsMap();
-
-        String jiraUrl = serviceConfigurationsMap.get("jiraUrl");
-        String accessToken = serviceConfigurationsMap.get("accessToken");
-
         ParsedToolInvokeRequest parsedRequest = ParsedToolInvokeRequest.parseRequest(request);
         LOG.infof("Invoking tool at URI: %s", parsedRequest.uri());
 
