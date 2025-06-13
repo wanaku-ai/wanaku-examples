@@ -5,7 +5,7 @@ import jakarta.inject.Inject;
 
 import ai.wanaku.core.exchange.ParsedToolInvokeRequest;
 import ai.wanaku.core.exchange.ToolInvokeRequest;
-import ai.wanaku.core.services.config.WanakuToolConfig;
+import ai.wanaku.core.services.config.WanakuServiceConfig;
 import ai.wanaku.core.services.tool.Client;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
@@ -18,7 +18,7 @@ public class DuckduckgoClient implements Client {
     private final ProducerTemplate producer;
 
     @Inject
-    WanakuToolConfig config;
+    WanakuServiceConfig config;
 
     public DuckduckgoClient(CamelContext camelContext) {
         this.producer = camelContext.createProducerTemplate();
