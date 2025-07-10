@@ -17,15 +17,14 @@
 
 package ai.wanaku.tool.duckduckgo;
 
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
-import java.util.List;
-
 import jakarta.enterprise.context.ApplicationScoped;
 
 import ai.wanaku.api.exceptions.InvalidResponseTypeException;
 import ai.wanaku.api.exceptions.NonConvertableResponseException;
-import ai.wanaku.core.services.tool.AbstractToolDelegate;
+import ai.wanaku.core.capabilities.tool.AbstractToolDelegate;
+import io.vertx.core.json.JsonArray;
+import io.vertx.core.json.JsonObject;
+import java.util.List;
 
 
 @ApplicationScoped
