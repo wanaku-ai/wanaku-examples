@@ -32,7 +32,6 @@
   </dependencyManagement>
 
   <modules>
-    <module>wanaku-tool-service-jolokia</module>
     <module>wanaku-tool-service-duckduckgo</module>
     <module>wanaku-tool-service-jira</module>
   </modules>
