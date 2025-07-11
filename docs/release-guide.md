@@ -26,11 +26,17 @@ mvn -Pdist clean package
 
 The next set of commands uses the Maven Release Plugin to automate the release process.
 
+Clean:
+
 ```shell
 mvn release:clean
 ```
 
-`mvn --batch-mode -Dtag=wanaku-${CURRENT_DEVELOPMENT_VERSION} release:prepare -DreleaseVersion=${CURRENT_DEVELOPMENT_VERSION} -DdevelopmentVersion=${NEXT_DEVELOPMENT_VERSION}-SNAPSHOT`
+Then release: 
+
+```shell
+mvn --batch-mode -Dtag=wanaku-${CURRENT_DEVELOPMENT_VERSION} release:prepare -DreleaseVersion=${CURRENT_DEVELOPMENT_VERSION} -DdevelopmentVersion=${NEXT_DEVELOPMENT_VERSION}-SNAPSHOT
+```
 
 ---
 
