@@ -30,9 +30,10 @@ public class DuckduckgoClient implements Client {
     public Object exchange(ToolInvokeRequest request, ConfigResource configResource) {
         producer.start();
 
+        String baseUri = config.baseUri();
         CamelQueryParameterBuilder parameterBuilder = new CamelQueryParameterBuilder(configResource);
         ParsedToolInvokeRequest parsedRequest =
-                ParsedToolInvokeRequest.parseRequest(request.getUri(), request, parameterBuilder::build);
+                ParsedToolInvokeRequest.parseRequest(baseUri, request, parameterBuilder::build);
 
         LOG.infof("Invoking tool at URI: %s", parsedRequest.uri());
 
