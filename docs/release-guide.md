@@ -40,5 +40,5 @@ jreleaser full-release -Djreleaser.project.version=${CURRENT_DEVELOPMENT_VERSION
 ### **5. Version Bump**
 
 ```shell
-mvn versions:set -DnewVersion=${NEXT_DEVELOPMENT_VERSION} && mvn versions:commit
+mvn versions:set -DnewVersion=${NEXT_DEVELOPMENT_VERSION} && mvn versions:commit && git commit -m "Prepare for the next version" .
 ```
