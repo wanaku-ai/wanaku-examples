@@ -9,3 +9,10 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: io.quarkus:*
+      - dependency-name: org.apache.camel:*
+      - dependency-name: org.apache.camel.quarkus:*
+      - dependency-name: org.apache.camel.kamelets:*
+      - dependency-name: ai.wanaku:*
+
