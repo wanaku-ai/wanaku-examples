@@ -1,0 +1,45 @@
+# Generated with JReleaser 1.17.0 at 2025-02-28T14:15:59.531913+01:00
+project:
+  name: Wanaku
+  description: Wanaku MCP Router
+  longDescription: Sample capabilities (tools and reosurce providers) for Wanaku
+
+  authors:
+    - The Wanaku Development Team
+  license: Apache-2.0
+  links:
+    homepage: https://wanaku.ai
+    bugTracker: https://github.com/wanaku-ai/wanaku-examples/issues
+  languages:
+    java:
+      groupId: ai.wanaku
+      version: 21
+  inceptionYear: 2025
+  tags:
+    - 'ai'
+    - 'mcp'
+    - 'java'
+    - 'agentic'
+    - 'agents'
+
+signing:
+  active: ALWAYS
+
+release:
+  github:
+    owner: wanaku-ai
+    overwrite: false
+    issues:
+      enabled: true
+    update:
+      enabled: true
+
+distributions:
+  wanaku-tool-service-duckduckgo:
+    artifacts:
+      - path: tools/wanaku-tool-service-duckduckgo/target/distributions/wanaku-tool-service-duckduckgo-{{projectVersion}}.zip
+    type: JAVA_BINARY
+  wanaku-tool-service-jira:
+    artifacts:
+      - path: tools/wanaku-tool-service-jira/target/distributions/wanaku-tool-service-jira-{{projectVersion}}.zip
+    type: JAVA_BINARY
