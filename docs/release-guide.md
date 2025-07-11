@@ -18,32 +18,24 @@ export NEXT_DEVELOPMENT_VERSION=0.0.7
 The first command prepares your project for release by cleaning and packaging it.
 
 ```shell
-mvn -Pdist clean package
+mvn versions:set -DnewVersion=${CURRENT_DEVELOPMENT_VERSION} && mvn versions:commit
 ```
 
 
-### **3. Preparing for Release**
-
-The next set of commands uses the Maven Release Plugin to automate the release process.
-
-Clean:
+### **3. Release the Project**
 
 ```shell
-mvn release:clean
+jreleaser full-release -Djreleaser.project.version=${CURRENT_DEVELOPMENT_VERSION}
 ```
 
-Then release: 
+### **4. Tag the Project**
 
 ```shell
-mvn --batch-mode -Dtag=wanaku-${CURRENT_DEVELOPMENT_VERSION} release:prepare -DreleaseVersion=${CURRENT_DEVELOPMENT_VERSION} -DdevelopmentVersion=${NEXT_DEVELOPMENT_VERSION}-SNAPSHOT
+git tag wanaku-${CURRENT_DEVELOPMENT_VERSION} && git push origin wanaku-${CURRENT_DEVELOPMENT_VERSION}
 ```
 
----
-
-### **4. Finalizing the Release**
-
-The final command performs the release, which means building from the tagged version and deploying it.
+### **5. Version Bump**
 
 ```shell
-mvn -Pdist release:perform -Dgoals=install
+mvn versions:set -DnewVersion=${NEXT_DEVELOPMENT_VERSION} && mvn versions:commit
 ```
