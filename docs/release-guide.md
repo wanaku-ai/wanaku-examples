@@ -18,20 +18,23 @@ export NEXT_DEVELOPMENT_VERSION=0.0.7
 The first command prepares your project for release by cleaning and packaging it.
 
 ```shell
-mvn versions:set -DnewVersion=${CURRENT_DEVELOPMENT_VERSION} && mvn versions:commit
+mvn versions:set -DnewVersion=${CURRENT_DEVELOPMENT_VERSION} && mvn versions:commit && git commit -m "Prepare for release" .
 ```
-
-
-### **3. Release the Project**
 
 ```shell
-jreleaser full-release -Djreleaser.project.version=${CURRENT_DEVELOPMENT_VERSION}
+mvn -Pdist clean package
 ```
 
-### **4. Tag the Project**
+### **3. Tag the Project**
 
 ```shell
 git tag wanaku-${CURRENT_DEVELOPMENT_VERSION} && git push origin wanaku-${CURRENT_DEVELOPMENT_VERSION}
+```
+
+### **4. Release the Project**
+
+```shell
+jreleaser full-release -Djreleaser.project.version=${CURRENT_DEVELOPMENT_VERSION}
 ```
 
 ### **5. Version Bump**
