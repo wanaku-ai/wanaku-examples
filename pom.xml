@@ -13,6 +13,24 @@
     <artifactId>wanaku-examples</artifactId>
     <version>0.0.6-SNAPSHOT</version>
     <name>Wanaku :: Examples</name>
+    <inceptionYear>2025</inceptionYear>
+    <url>https://github.com/wanaku-ai/wanaku-examples</url>
+    <description>Wanaku MCP Router</description>
+
+    <scm>
+        <connection>scm:git:https://github.com/wanaku-ai/wanaku-examples.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/wanaku-ai/wanaku-examples.git</developerConnection>
+        <url>https://github.com/wanaku-ai/wanaku-examples</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <wanaku.version>0.0.6-SNAPSHOT</wanaku.version>
