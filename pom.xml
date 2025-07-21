@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
     <groupId>ai.wanaku.examples</groupId>
     <artifactId>wanaku-examples</artifactId>
-    <version>0.0.7</version>
+    <version>0.0.8</version>
     <name>Wanaku :: Examples</name>
     <inceptionYear>2025</inceptionYear>
     <url>https://github.com/wanaku-ai/wanaku-examples</url>
