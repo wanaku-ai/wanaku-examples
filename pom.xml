@@ -33,7 +33,7 @@
     </licenses>
 
     <properties>
-        <wanaku.version>0.0.6</wanaku.version>
+        <wanaku.version>0.0.7</wanaku.version>
     </properties>
 
     <modules>
