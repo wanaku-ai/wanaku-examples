@@ -7,9 +7,9 @@ This guide breaks down the process of releasing your project using the provided 
 Before you begin the release process, you need to define three key versions as environment variables. This practice helps to automate and standardize your release workflow.
 
 ```shell
-export PREVIOUS_VERSION=0.0.5
-export CURRENT_DEVELOPMENT_VERSION=0.0.6
-export NEXT_DEVELOPMENT_VERSION=0.0.7
+export PREVIOUS_VERSION=0.0.7
+export CURRENT_DEVELOPMENT_VERSION=0.0.8
+export NEXT_DEVELOPMENT_VERSION=0.0.9
 ```
 
 
