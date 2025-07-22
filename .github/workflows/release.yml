@@ -44,6 +44,10 @@ jobs:
           mvn -Pdist clean package
           git tag wanaku-${{ github.event.inputs.currentDevelopmentVersion }}
           git push origin wanaku-${{ github.event.inputs.currentDevelopmentVersion }}
+          mvn versions:set -DnewVersion=${{ github.event.inputs.nextDevelopmentVersion }}
+          mvn versions:commit
+          git commit -m "Prepare for the next version" .
+          git push origin main
 
   release-artifacts:
     name: Release artifacts
