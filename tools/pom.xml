@@ -1,38 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>ai.wanaku.examples</groupId>
-    <artifactId>wanaku-examples</artifactId>
-    <version>0.0.8-SNAPSHOT</version>
-    <relativePath>../pom.xml</relativePath>
-  </parent>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ai.wanaku.examples</groupId>
+        <artifactId>wanaku-examples</artifactId>
+        <version>0.0.8-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
-  <artifactId>tools</artifactId>
-  <packaging>pom</packaging>
-  <name>Wanaku :: Examples :: Tools</name>
+    <artifactId>tools</artifactId>
+    <packaging>pom</packaging>
+    <name>Wanaku :: Examples :: Tools</name>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>${quarkus.platform.group-id}</groupId>
-        <artifactId>quarkus-camel-bom</artifactId>
-        <version>${quarkus.platform.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>${quarkus.platform.group-id}</groupId>
+                <artifactId>quarkus-camel-bom</artifactId>
+                <version>${quarkus.platform.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
-      <dependency>
-        <groupId>org.apache.camel</groupId>
-        <artifactId>camel-bom</artifactId>
-        <version>${camel.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-bom</artifactId>
+                <version>${camel.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-  <modules>
-    <module>wanaku-tool-service-duckduckgo</module>
-    <module>wanaku-tool-service-jira</module>
-  </modules>
+    <modules>
+        <module>wanaku-tool-service-duckduckgo</module>
+        <module>wanaku-tool-service-jira</module>
+        <module>wanaku-tool-service-kafka</module>
+        <module>wanaku-tool-service-sqs</module>
+        <module>wanaku-tool-service-telegram</module>
+        <module>wanaku-tool-service-yaml-route</module>
+    </modules>
 </project>

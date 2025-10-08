@@ -1,2 +1,7 @@
 quay.io/wanaku/wanaku-tool-service-duckduckgo:latest
 quay.io/wanaku/wanaku-tool-service-jira:latest
+quay.io/wanaku/wanaku-tool-service-yaml-route:latest
+quay.io/wanaku/wanaku-tool-service-kafka:latest
+quay.io/wanaku/wanaku-provider-s3:latest
+quay.io/wanaku/wanaku-provider-ftp:latest
+quay.io/wanaku/wanaku-provider-file:latest

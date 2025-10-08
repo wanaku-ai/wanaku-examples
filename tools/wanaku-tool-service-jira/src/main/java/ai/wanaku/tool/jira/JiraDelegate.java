@@ -17,8 +17,6 @@
 
 package ai.wanaku.tool.jira;
 
-import jakarta.enterprise.context.ApplicationScoped;
-
 import ai.wanaku.api.exceptions.InvalidResponseTypeException;
 import ai.wanaku.api.exceptions.NonConvertableResponseException;
 import ai.wanaku.core.capabilities.tool.AbstractToolDelegate;
@@ -26,14 +24,15 @@ import com.atlassian.jira.rest.client.api.domain.Issue;
 import com.atlassian.jira.rest.client.api.domain.Version;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import jakarta.enterprise.context.ApplicationScoped;
 import java.util.List;
-
 
 @ApplicationScoped
 public class JiraDelegate extends AbstractToolDelegate {
 
     @Override
-    protected List<String> coerceResponse(Object response) throws InvalidResponseTypeException, NonConvertableResponseException {
+    protected List<String> coerceResponse(Object response)
+            throws InvalidResponseTypeException, NonConvertableResponseException {
         if (response == null) {
             throw new InvalidResponseTypeException("Invalid response type from the consumer: null");
         }
@@ -46,7 +45,7 @@ public class JiraDelegate extends AbstractToolDelegate {
             ret.put("description", issue.getDescription());
             ret.put("assignee", issue.getAssignee().getDisplayName());
             JsonArray fixVersionsArray = new JsonArray();
-            for (Version version: issue.getFixVersions()) {
+            for (Version version : issue.getFixVersions()) {
                 JsonObject fixedVersion = new JsonObject();
                 fixedVersion.put("version", version.getName());
                 fixVersionsArray.add(fixedVersion);
@@ -54,7 +53,7 @@ public class JiraDelegate extends AbstractToolDelegate {
             ret.put("fixVersions", fixVersionsArray);
 
             JsonArray affectedVersions = new JsonArray();
-            for (Version version: issue.getAffectedVersions()) {
+            for (Version version : issue.getAffectedVersions()) {
                 JsonObject affectedVersion = new JsonObject();
                 affectedVersion.put("version", version.getName());
                 affectedVersions.add(affectedVersion);
@@ -65,6 +64,7 @@ public class JiraDelegate extends AbstractToolDelegate {
         }
 
         // Here, convert the response from whatever format it is, to a String instance.
-        throw new InvalidResponseTypeException("The downstream service has not implemented the response coercion method");
+        throw new InvalidResponseTypeException(
+                "The downstream service has not implemented the response coercion method");
     }
 }
