@@ -1,13 +1,11 @@
 package ai.wanaku.tool.jira;
 
-import jakarta.enterprise.context.ApplicationScoped;
-
 import ai.wanaku.core.capabilities.common.ParsedToolInvokeRequest;
 import ai.wanaku.core.capabilities.tool.Client;
 import ai.wanaku.core.config.provider.api.ConfigResource;
 import ai.wanaku.core.exchange.ToolInvokeRequest;
 import ai.wanaku.core.runtime.camel.CamelQueryParameterBuilder;
-
+import jakarta.enterprise.context.ApplicationScoped;
 import java.util.Map;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
