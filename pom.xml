@@ -34,7 +34,7 @@
     </licenses>
 
     <properties>
-        <wanaku.version>0.0.8-SNAPSHOT</wanaku.version>
+        <wanaku.version>0.0.8</wanaku.version>
         <awssdk.version>2.34.0</awssdk.version>
     </properties>
 
