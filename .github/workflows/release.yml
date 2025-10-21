@@ -35,6 +35,9 @@ jobs:
           MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
         run: |
+          export GPG_TTY=$(tty)
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
           mvn versions:set -DnewVersion="${{ github.event.inputs.currentDevelopmentVersion }}"
           mvn versions:commit
           git commit -m "Prepare for release" .
