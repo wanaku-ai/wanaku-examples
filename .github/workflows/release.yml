@@ -48,16 +48,14 @@ jobs:
 
   release-artifacts:
     name: Release artifacts
+    needs: perform-release
     runs-on: ${{ matrix.os }}
     permissions:
       contents: write
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ ubuntu-latest, ubuntu-24.04-arm ]
         experimental: [ false ]
-        include:
-          - os: [ macos-latest ]
-            experimental: true
       fail-fast: true
 
     steps:
@@ -86,7 +84,7 @@ jobs:
       - name: Create a release build with container push (x86)
         if: matrix.os == 'ubuntu-latest'
         run: |
-          mvn -Dnative -Pdist \
+          mvn -DskipTests -Pdist \
           -Dquarkus.container-image.build=true \
           -Dquarkus.container-image.push=true \
           -Dquarkus.container-image.tag=${{ github.ref_name }}-${{ steps.arch.outputs.arch }} \
@@ -95,7 +93,7 @@ jobs:
       - name: Create a release build with container push (x86)
         if: matrix.os != 'ubuntu-latest'
         run: |
-          mvn -Dnative -Pdist \
+          mvn -DskipTests -Pdist \
           -Dquarkus.container-image.build=true \
           -Dquarkus.container-image.push=true \
           -Dquarkus.container-image.tag=${{ github.ref_name }}-${{ steps.arch.outputs.arch }} \
