@@ -35,7 +35,7 @@
 
     <properties>
         <wanaku.version>0.0.8</wanaku.version>
-        <awssdk.version>2.34.0</awssdk.version>
+        <awssdk.version>2.38.7</awssdk.version>
     </properties>
 
     <dependencyManagement>
