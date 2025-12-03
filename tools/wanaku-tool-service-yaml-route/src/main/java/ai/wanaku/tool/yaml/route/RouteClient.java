@@ -2,11 +2,11 @@ package ai.wanaku.tool.yaml.route;
 
 import static ai.wanaku.core.runtime.camel.CamelQueryHelper.safeLog;
 
-import ai.wanaku.api.exceptions.WanakuException;
+import ai.wanaku.capabilities.sdk.api.exceptions.WanakuException;
+import ai.wanaku.capabilities.sdk.config.provider.api.ConfigResource;
 import ai.wanaku.core.capabilities.common.ParsedToolInvokeRequest;
 import ai.wanaku.core.capabilities.config.WanakuServiceConfig;
 import ai.wanaku.core.capabilities.tool.Client;
-import ai.wanaku.core.config.provider.api.ConfigResource;
 import ai.wanaku.core.exchange.ToolInvokeRequest;
 import jakarta.enterprise.context.ApplicationScoped;
 import org.apache.camel.CamelContext;

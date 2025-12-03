@@ -2,12 +2,12 @@ package ai.wanaku.provider.s3;
 
 import static ai.wanaku.core.uri.URIHelper.buildUri;
 
-import ai.wanaku.api.exceptions.InvalidResponseTypeException;
-import ai.wanaku.api.exceptions.ResourceNotFoundException;
+import ai.wanaku.capabilities.sdk.api.exceptions.InvalidResponseTypeException;
+import ai.wanaku.capabilities.sdk.api.exceptions.ResourceNotFoundException;
+import ai.wanaku.capabilities.sdk.config.provider.api.ConfigResource;
 import ai.wanaku.core.capabilities.common.ServiceOptions;
 import ai.wanaku.core.capabilities.config.WanakuServiceConfig;
 import ai.wanaku.core.capabilities.provider.AbstractResourceDelegate;
-import ai.wanaku.core.config.provider.api.ConfigResource;
 import ai.wanaku.core.exchange.ResourceRequest;
 import ai.wanaku.core.runtime.camel.CamelQueryParameterBuilder;
 import jakarta.enterprise.context.ApplicationScoped;

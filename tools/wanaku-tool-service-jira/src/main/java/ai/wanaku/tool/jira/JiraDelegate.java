@@ -17,8 +17,8 @@
 
 package ai.wanaku.tool.jira;
 
-import ai.wanaku.api.exceptions.InvalidResponseTypeException;
-import ai.wanaku.api.exceptions.NonConvertableResponseException;
+import ai.wanaku.capabilities.sdk.api.exceptions.InvalidResponseTypeException;
+import ai.wanaku.capabilities.sdk.api.exceptions.NonConvertableResponseException;
 import ai.wanaku.core.capabilities.tool.AbstractToolDelegate;
 import com.atlassian.jira.rest.client.api.domain.Issue;
 import com.atlassian.jira.rest.client.api.domain.Version;
