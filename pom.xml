@@ -6,13 +6,13 @@
     <parent>
         <groupId>ai.wanaku</groupId>
         <artifactId>parent</artifactId>
-        <version>0.0.9-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
     </parent>
 
     <packaging>pom</packaging>
     <groupId>ai.wanaku.examples</groupId>
     <artifactId>wanaku-examples</artifactId>
-    <version>0.0.9-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <name>Wanaku :: Examples</name>
     <inceptionYear>2025</inceptionYear>
     <url>https://github.com/wanaku-ai/wanaku-examples</url>
@@ -34,7 +34,7 @@
     </licenses>
 
     <properties>
-        <wanaku.version>0.0.9-SNAPSHOT</wanaku.version>
+        <wanaku.version>0.1.0-SNAPSHOT</wanaku.version>
         <awssdk.version>2.34.0</awssdk.version>
     </properties>
 
