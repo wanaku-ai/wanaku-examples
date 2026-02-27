@@ -1,18 +1,19 @@
 package ai.wanaku.tool.kafka;
 
-import static ai.wanaku.core.runtime.camel.CamelQueryHelper.safeLog;
-
-import ai.wanaku.capabilities.sdk.config.provider.api.ConfigResource;
-import ai.wanaku.core.capabilities.common.ParsedToolInvokeRequest;
-import ai.wanaku.core.capabilities.config.WanakuServiceConfig;
-import ai.wanaku.core.capabilities.tool.Client;
-import ai.wanaku.core.exchange.ToolInvokeRequest;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+
 import org.apache.camel.CamelContext;
 import org.apache.camel.ConsumerTemplate;
 import org.apache.camel.ProducerTemplate;
 import org.jboss.logging.Logger;
+import ai.wanaku.capabilities.sdk.config.provider.api.ConfigResource;
+import ai.wanaku.core.capabilities.common.ParsedToolInvokeRequest;
+import ai.wanaku.core.capabilities.config.WanakuServiceConfig;
+import ai.wanaku.core.capabilities.tool.Client;
+import ai.wanaku.core.exchange.v1.ToolInvokeRequest;
+
+import static ai.wanaku.core.runtime.camel.CamelQueryHelper.safeLog;
 
 @ApplicationScoped
 public class KafkaClient implements Client {

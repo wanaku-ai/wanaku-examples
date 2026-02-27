@@ -17,15 +17,16 @@
 
 package ai.wanaku.tool.jira;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
+import java.util.List;
+import io.vertx.core.json.JsonArray;
+import io.vertx.core.json.JsonObject;
 import ai.wanaku.capabilities.sdk.api.exceptions.InvalidResponseTypeException;
 import ai.wanaku.capabilities.sdk.api.exceptions.NonConvertableResponseException;
 import ai.wanaku.core.capabilities.tool.AbstractToolDelegate;
 import com.atlassian.jira.rest.client.api.domain.Issue;
 import com.atlassian.jira.rest.client.api.domain.Version;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
-import jakarta.enterprise.context.ApplicationScoped;
-import java.util.List;
 
 @ApplicationScoped
 public class JiraDelegate extends AbstractToolDelegate {

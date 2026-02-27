@@ -17,13 +17,14 @@
 
 package ai.wanaku.tool.duckduckgo;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
+import java.util.List;
+import io.vertx.core.json.JsonArray;
+import io.vertx.core.json.JsonObject;
 import ai.wanaku.capabilities.sdk.api.exceptions.InvalidResponseTypeException;
 import ai.wanaku.capabilities.sdk.api.exceptions.NonConvertableResponseException;
 import ai.wanaku.core.capabilities.tool.AbstractToolDelegate;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
-import jakarta.enterprise.context.ApplicationScoped;
-import java.util.List;
 
 @ApplicationScoped
 public class DuckduckgoDelegate extends AbstractToolDelegate {

@@ -1,21 +1,22 @@
 package ai.wanaku.provider.ftp;
 
-import static ai.wanaku.core.uri.URIHelper.buildUri;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
+import java.util.List;
+import java.util.Map;
+import org.apache.camel.component.file.GenericFile;
+import org.jboss.logging.Logger;
 import ai.wanaku.capabilities.sdk.api.exceptions.InvalidResponseTypeException;
 import ai.wanaku.capabilities.sdk.api.exceptions.NonConvertableResponseException;
 import ai.wanaku.capabilities.sdk.config.provider.api.ConfigResource;
 import ai.wanaku.core.capabilities.common.ServiceOptions;
 import ai.wanaku.core.capabilities.config.WanakuServiceConfig;
 import ai.wanaku.core.capabilities.provider.AbstractResourceDelegate;
-import ai.wanaku.core.exchange.ResourceRequest;
+import ai.wanaku.core.exchange.v1.ResourceRequest;
 import ai.wanaku.core.runtime.camel.CamelQueryParameterBuilder;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import java.util.List;
-import java.util.Map;
-import org.apache.camel.component.file.GenericFile;
-import org.jboss.logging.Logger;
+
+import static ai.wanaku.core.uri.URIHelper.buildUri;
 
 @ApplicationScoped
 public class FTPResourceDelegate extends AbstractResourceDelegate {

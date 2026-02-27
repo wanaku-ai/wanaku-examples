@@ -1,9 +1,10 @@
 package ai.wanaku.tool.yaml.route;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
+import java.util.List;
 import ai.wanaku.capabilities.sdk.api.exceptions.InvalidResponseTypeException;
 import ai.wanaku.core.capabilities.tool.AbstractToolDelegate;
-import jakarta.enterprise.context.ApplicationScoped;
-import java.util.List;
 
 @ApplicationScoped
 public class YamlRouteDelegate extends AbstractToolDelegate {

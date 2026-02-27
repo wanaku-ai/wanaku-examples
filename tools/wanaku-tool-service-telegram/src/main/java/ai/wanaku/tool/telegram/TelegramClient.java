@@ -1,14 +1,15 @@
 package ai.wanaku.tool.telegram;
 
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+
+import org.apache.camel.ProducerTemplate;
 import ai.wanaku.capabilities.sdk.config.provider.api.ConfigResource;
 import ai.wanaku.core.capabilities.common.ParsedToolInvokeRequest;
 import ai.wanaku.core.capabilities.config.WanakuServiceConfig;
 import ai.wanaku.core.capabilities.tool.Client;
-import ai.wanaku.core.exchange.ToolInvokeRequest;
+import ai.wanaku.core.exchange.v1.ToolInvokeRequest;
 import ai.wanaku.core.runtime.camel.CamelQueryParameterBuilder;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import org.apache.camel.ProducerTemplate;
 
 @ApplicationScoped
 public class TelegramClient implements Client {

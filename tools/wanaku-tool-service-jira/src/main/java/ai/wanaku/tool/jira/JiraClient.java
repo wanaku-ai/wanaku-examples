@@ -1,15 +1,16 @@
 package ai.wanaku.tool.jira;
 
-import ai.wanaku.capabilities.sdk.config.provider.api.ConfigResource;
-import ai.wanaku.core.capabilities.common.ParsedToolInvokeRequest;
-import ai.wanaku.core.capabilities.tool.Client;
-import ai.wanaku.core.exchange.ToolInvokeRequest;
-import ai.wanaku.core.runtime.camel.CamelQueryParameterBuilder;
 import jakarta.enterprise.context.ApplicationScoped;
+
 import java.util.Map;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.component.jira.JiraConstants;
+import ai.wanaku.capabilities.sdk.config.provider.api.ConfigResource;
+import ai.wanaku.core.capabilities.common.ParsedToolInvokeRequest;
+import ai.wanaku.core.capabilities.tool.Client;
+import ai.wanaku.core.exchange.v1.ToolInvokeRequest;
+import ai.wanaku.core.runtime.camel.CamelQueryParameterBuilder;
 
 @ApplicationScoped
 public class JiraClient implements Client {

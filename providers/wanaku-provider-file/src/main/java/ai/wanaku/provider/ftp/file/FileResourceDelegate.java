@@ -1,16 +1,8 @@
 package ai.wanaku.provider.ftp.file;
 
-import static ai.wanaku.core.uri.URIHelper.buildUri;
-
-import ai.wanaku.capabilities.sdk.api.exceptions.InvalidResponseTypeException;
-import ai.wanaku.capabilities.sdk.api.exceptions.NonConvertableResponseException;
-import ai.wanaku.capabilities.sdk.config.provider.api.ConfigResource;
-import ai.wanaku.core.capabilities.config.WanakuServiceConfig;
-import ai.wanaku.core.capabilities.provider.AbstractResourceDelegate;
-import ai.wanaku.core.exchange.ResourceRequest;
-import ai.wanaku.core.runtime.camel.CamelQueryParameterBuilder;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -18,6 +10,15 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 import org.apache.camel.component.file.GenericFile;
+import ai.wanaku.capabilities.sdk.api.exceptions.InvalidResponseTypeException;
+import ai.wanaku.capabilities.sdk.api.exceptions.NonConvertableResponseException;
+import ai.wanaku.capabilities.sdk.config.provider.api.ConfigResource;
+import ai.wanaku.core.capabilities.config.WanakuServiceConfig;
+import ai.wanaku.core.capabilities.provider.AbstractResourceDelegate;
+import ai.wanaku.core.exchange.v1.ResourceRequest;
+import ai.wanaku.core.runtime.camel.CamelQueryParameterBuilder;
+
+import static ai.wanaku.core.uri.URIHelper.buildUri;
 
 @ApplicationScoped
 public class FileResourceDelegate extends AbstractResourceDelegate {
