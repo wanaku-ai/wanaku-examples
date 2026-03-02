@@ -66,6 +66,7 @@ jobs:
           -Dquarkus.jib.platforms=linux/arm64/v8 \
           clean package
       - name: Run JReleaser
+        if: matrix.os == 'ubuntu-latest'
         uses: jreleaser/release-action@v2
         env:
           JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -79,10 +80,10 @@ jobs:
       # Persist logs
 
       - name: JReleaser release output
-        if: always()
+        if: always() && matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: jreleaser-release-${{ matrix.os }}
+          name: jreleaser-release
           path: |
             out/jreleaser/trace.log
             out/jreleaser/output.properties
