@@ -36,10 +36,38 @@ release:
 
 distributions:
   wanaku-tool-service-duckduckgo:
+    type: JAVA_BINARY
     artifacts:
       - path: tools/wanaku-tool-service-duckduckgo/target/distributions/wanaku-tool-service-duckduckgo-{{projectVersion}}.zip
-    type: JAVA_BINARY
   wanaku-tool-service-jira:
+    type: JAVA_BINARY
     artifacts:
       - path: tools/wanaku-tool-service-jira/target/distributions/wanaku-tool-service-jira-{{projectVersion}}.zip
+  wanaku-tool-service-kafka:
     type: JAVA_BINARY
+    artifacts:
+      - path: tools/wanaku-tool-service-kafka/target/distributions/wanaku-tool-service-kafka-{{projectVersion}}.zip
+  wanaku-tool-service-sqs:
+    type: JAVA_BINARY
+    artifacts:
+      - path: tools/wanaku-tool-service-sqs/target/distributions/wanaku-tool-service-sqs-{{projectVersion}}.zip
+  wanaku-tool-service-telegram:
+    type: JAVA_BINARY
+    artifacts:
+      - path: tools/wanaku-tool-service-telegram/target/distributions/wanaku-tool-service-telegram-{{projectVersion}}.zip
+  wanaku-tool-service-yaml-route:
+    type: JAVA_BINARY
+    artifacts:
+      - path: tools/wanaku-tool-service-yaml-route/target/distributions/wanaku-tool-service-yaml-route-{{projectVersion}}.zip
+  wanaku-provider-file:
+    type: JAVA_BINARY
+    artifacts:
+      - path: providers/wanaku-provider-file/target/distributions/wanaku-provider-file-{{projectVersion}}.zip
+  wanaku-provider-ftp:
+    type: JAVA_BINARY
+    artifacts:
+      - path: providers/wanaku-provider-ftp/target/distributions/wanaku-provider-ftp-{{projectVersion}}.zip
+  wanaku-provider-s3:
+    type: JAVA_BINARY
+    artifacts:
+      - path: providers/wanaku-provider-s3/target/distributions/wanaku-provider-s3-{{projectVersion}}.zip
