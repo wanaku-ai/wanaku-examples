@@ -17,7 +17,7 @@ jobs:
       - name: Extract version from pom.xml
         id: version
         run: |
-          VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          VERSION=$(grep -m1 '<version>' pom.xml | sed 's/.*<version>\(.*\)<\/version>.*/\1/')
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Trigger early-access workflow
