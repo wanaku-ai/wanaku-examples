@@ -34,7 +34,7 @@
 
     <properties>
         <wanaku.version>0.1.0-SNAPSHOT</wanaku.version>
-        <awssdk.version>2.34.0</awssdk.version>
+        <awssdk.version>2.39.6</awssdk.version>
     </properties>
 
     <dependencyManagement>
