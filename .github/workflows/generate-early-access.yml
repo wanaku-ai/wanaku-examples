@@ -6,6 +6,10 @@ on:
     # Run daily at 00:00 UTC
     - cron: '0 0 * * *'
 
+permissions:
+  actions: write
+  contents: read
+
 jobs:
   trigger-early-access:
     if: github.repository == 'wanaku-ai/wanaku-examples'
