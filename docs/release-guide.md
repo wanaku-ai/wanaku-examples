@@ -1,44 +1,55 @@
 ## Releasing Wanaku Examples
 
-This guide breaks down the process of releasing your project using the provided Maven commands. It explains each step, from setting version numbers to deploying the final release.
+This guide describes how to release the project. The release is automated via the `release` GitHub Actions workflow, which creates a release branch, builds container images, and publishes artifacts through JReleaser.
 
-### **1. Setting the Stage: Version Numbers**
+### **Automated Release (GitHub Actions)**
 
-Before you begin the release process, you need to define three key versions as environment variables. This practice helps to automate and standardize your release workflow.
+Via the GitHub UI:
+
+1. Go to **Actions** > **release** > **Run workflow**.
+2. Enter the release version (e.g., `0.1.0`).
+3. Click **Run workflow**.
+
+Via the CLI:
 
 ```shell
-export PREVIOUS_VERSION=0.0.7
-export CURRENT_DEVELOPMENT_VERSION=0.0.8
-export NEXT_DEVELOPMENT_VERSION=0.0.9
+export RELEASE_VERSION=0.1.0
+gh workflow run release -f releaseVersion=${RELEASE_VERSION}
 ```
 
+The workflow will:
 
-### **2. Building the Project**
+- Create a branch named after the version (e.g., `0.1.0`).
+- Build the project with the `dist` profile.
+- Build and push container images for x86 and arm64 to Quay.io.
+- Run JReleaser to publish the release artifacts on GitHub.
+- Create and push multi-arch container manifests.
 
-The first command prepares your project for release by cleaning and packaging it.
+### **Manual Release**
+
+If you need to release manually, follow these steps:
+
+#### **1. Set the version**
 
 ```shell
-mvn versions:set -DnewVersion=${CURRENT_DEVELOPMENT_VERSION} && mvn versions:commit && git commit -m "Prepare for release" .
+export RELEASE_VERSION=0.1.0
 ```
 
+#### **2. Create the release branch**
+
 ```shell
-mvn -Pdist clean package
+git checkout -b ${RELEASE_VERSION}
+git push origin ${RELEASE_VERSION}
 ```
 
-### **3. Tag the Project**
+#### **3. Build the project**
 
 ```shell
-git tag wanaku-${CURRENT_DEVELOPMENT_VERSION} && git push origin wanaku-${CURRENT_DEVELOPMENT_VERSION}
+mvn -DskipTests -Pdist clean package
 ```
 
-### **4. Release the Project**
+#### **4. Release the project**
 
 ```shell
-jreleaser full-release -Djreleaser.project.version=${CURRENT_DEVELOPMENT_VERSION}
-```
-
-### **5. Version Bump**
-
-```shell
-mvn versions:set -DnewVersion=${NEXT_DEVELOPMENT_VERSION} && mvn versions:commit && git commit -m "Prepare for the next version" .
+jreleaser full-release -Djreleaser.project.version=${RELEASE_VERSION}
 ```
