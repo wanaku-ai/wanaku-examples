@@ -6,7 +6,7 @@
     <parent>
         <groupId>ai.wanaku</groupId>
         <artifactId>parent</artifactId>
-        <version>0.1.0</version>
+        <version>0.1.1-SNAPSHOT</version>
     </parent>
 
     <packaging>pom</packaging>
@@ -33,7 +33,7 @@
     </licenses>
 
     <properties>
-        <wanaku.version>0.1.0</wanaku.version>
+        <wanaku.version>0.1.1-SNAPSHOT</wanaku.version>
         <awssdk.version>2.39.6</awssdk.version>
     </properties>
 
