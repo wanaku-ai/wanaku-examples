@@ -80,6 +80,7 @@ jobs:
           clean package
 
       - name: Run JReleaser
+        if: matrix.os == 'ubuntu-latest'
         uses: jreleaser/release-action@v2
         env:
           JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -90,7 +91,7 @@ jobs:
           JRELEASER_GPG_SECRET_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
 
       - name: JReleaser release output
-        if: always()
+        if: always() && matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
           name: jreleaser-release-${{ matrix.os }}

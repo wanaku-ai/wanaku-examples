@@ -28,7 +28,7 @@ signing:
 release:
   github:
     owner: wanaku-ai
-    overwrite: false
+    overwrite: true
     issues:
       enabled: true
     update:
